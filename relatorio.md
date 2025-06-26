@@ -48,7 +48,8 @@ O sistema fakerational organiza os arquivos e diretórios em uma **estrutura de 
 - Arquivos são elementos terminais (folhas).
 - A ordenação é **lexicográfica** e mantida automaticamente pela árvore.
 
-Abaixo está um exemplo visual de como o sistema constrói esse conjunto de árvores:
+Abaixo está um exemplo visual de como o sistema constrói esse conjunto de árvores
+sendo em azul os nodes(nós) em azul e as leafs(folhas) em amarelo:
 
 ![Estrutura de Árvores B+](Esquema_visual.png)
 
