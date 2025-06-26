@@ -40,7 +40,7 @@ Os dados foram plotados em um gráfico (`Grafico.png`) usando `matplotlib`.
 
 ### Gráfico de desempenho
 
-![Benchmark da Árvore B+](benchmark_bplustree_full.png)
+![Benchmark da Árvore B+](Grafico.png)
 
 ### Tempos medidos:
 
