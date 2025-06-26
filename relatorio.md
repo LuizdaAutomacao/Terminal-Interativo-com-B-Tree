@@ -1,4 +1,4 @@
-#  Análise Empírica de Desempenho - Árvore B+
+#  Relatório de Análise Empírica de Desempenho - Árvore B+
 
 ---
 
@@ -6,9 +6,9 @@
 
 O objetivo desta análise é avaliar empiricamente o desempenho da implementação da **Árvore B+** com operações de:
 
-- Inserção
-- Busca
-- Remoção
+ Inserção
+ Busca
+ Remoção
 
 A análise compara o tempo médio de execução dessas operações com suas complexidades assintóticas esperadas, que são:
 
@@ -20,7 +20,7 @@ A análise compara o tempo médio de execução dessas operações com suas comp
 
 ---
 
-## 🧪 Metodologia
+##  Metodologia
 
 O script `benchmark.py` foi usado para executar testes automatizados com entradas de tamanhos variados:
 
@@ -95,10 +95,10 @@ A tabela abaixo apresenta os tempos de execução para as operações de inserç
 
 Os resultados empíricos confirmam o comportamento esperado para a estrutura de dados Árvore B+:
 
-- **Complexidade Logarítmica:** Todas as operações (`inserção`, `busca` e `remoção`) apresentaram um crescimento de tempo de execução consistente com a complexidade teórica de O(log n), como pode ser observado na relação entre os tempos e o valor de `log₁₀(n)`.
-- **Custo de Inserção:** A inserção apresentou o maior custo computacional. Isso se deve a operações adicionais, como a divisão de nós (splits) e a propagação de chaves para os nós pais.
-- **Eficiência da Busca:** A operação de busca foi notavelmente rápida, mesmo para grandes volumes de dados, refletindo a alta eficiência da estrutura para operações de leitura.
-- **Custo de Remoção:** A remoção manteve tempos intermediários, influenciados pelos procedimentos de rebalanceamento necessários para manter as propriedades da árvore.
+ **Complexidade Logarítmica:** Todas as operações (`inserção`, `busca` e `remoção`) apresentaram um crescimento de tempo de execução consistente com a complexidade teórica de O(log n), como pode ser observado na relação entre os tempos e o valor de `log₁₀(n)`.
+ **Custo de Inserção:** A inserção apresentou o maior custo computacional. Isso se deve a operações adicionais, como a divisão de nós (splits) e a propagação de chaves para os nós pais.
+ **Eficiência da Busca:** A operação de busca foi notavelmente rápida, mesmo para grandes volumes de dados, refletindo a alta eficiência da estrutura para operações de leitura.
+ **Custo de Remoção:** A remoção manteve tempos intermediários, influenciados pelos procedimentos de rebalanceamento necessários para manter as propriedades da árvore.
 
 Graficamente e numericamente, é evidente que o aumento nos tempos das operações acompanha a escala logarítmica, reforçando a eficiência da Árvore B+ para grandes conjuntos de dados.
 
