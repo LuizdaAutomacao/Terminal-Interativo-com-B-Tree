@@ -1,8 +1,8 @@
-# 📊 Análise Empírica de Desempenho - Árvore B+
+#  Análise Empírica de Desempenho - Árvore B+
 
 ---
 
-## 🎯 Objetivo
+##  Objetivo
 
 O objetivo desta análise é avaliar empiricamente o desempenho da implementação da **Árvore B+** com operações de:
 
@@ -38,9 +38,9 @@ Os dados foram plotados em um gráfico (`Grafico.png`) usando `matplotlib`.
 
 ---
 
-## 🌲 Estrutura Hierárquica das Árvores B+
+##  Estrutura Hierárquica das Árvores B+
 
-### 🗂️ Representação Visual
+###  Representação Visual
 
 O sistema fakerational organiza os arquivos e diretórios em uma **estrutura de árvores B+ aninhadas**, onde:
 
@@ -52,7 +52,7 @@ Abaixo está um exemplo visual de como o sistema constrói esse conjunto de árv
 
 ![Estrutura de Árvores B+](Esquema_visual.png)
 
-### 💻 Comandos que geram essa estrutura
+### Comandos que geram essa estrutura
 
 Os seguintes comandos do terminal produzem exatamente a hierarquia da imagem acima:
 
