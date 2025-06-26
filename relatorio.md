@@ -102,17 +102,6 @@ Os resultados empíricos confirmam o comportamento esperado para a estrutura de 
 
 Graficamente e numericamente, é evidente que o aumento nos tempos das operações acompanha a escala logarítmica, reforçando a eficiência da Árvore B+ para grandes conjuntos de dados.
 
----
 
-### Conclusão Final
-
-A análise empírica e estrutural da implementação da Árvore B+ no sistema **fakerational** demonstrou um desempenho robusto e coerente com a teoria.
-
-- **Escalabilidade:** O sistema provou ser escalável, com crescimento logarítmico em todas as operações avaliadas.
-- **Estabilidade:** A performance manteve-se estável mesmo com um aumento expressivo no volume de dados.
-- **Arquitetura Modular:** A organização hierárquica, utilizando múltiplas Árvores B+ independentes (uma por diretório), assegura modularidade, eficiência e robustez estrutural.
-- **Recursos Adicionais:** A estratégia de encadeamento duplo nos nós folha otimiza operações sequenciais, como listagem ordenada e consultas por intervalo.
-
-Em suma, o sistema **fakerational**, baseado em uma hierarquia de Árvores B+, é uma solução eficaz e de alto desempenho para aplicações que demandam armazenamento organizado e acesso rápido à informação.
 
 
