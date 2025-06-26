@@ -61,7 +61,7 @@ A análise visual e numérica mostra que:
 - A **busca** é eficiente e mais barata que as demais, mesmo com 1 milhão de elementos.
 - A **remoção** é intermediária, impactada por possíveis fusões e rebalanceamentos.
 
-A proporcionalidade com `log₁₀(n)` mostra que a estrutura mantém um excelente desempenho, mesmo para volumes elevados de dados.
+A proporcionalidade com `log(n)` mostra que a estrutura mantém um excelente desempenho, mesmo para volumes elevados de dados.
 
 ---
 
