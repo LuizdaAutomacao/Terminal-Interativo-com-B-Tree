@@ -79,7 +79,7 @@ A tabela abaixo apresenta os tempos de execução para as operações de inserç
 
 #### Tempos Medidos
 
-| Tamanho (n) | Inserção (s) | Busca (s) | Remoção (s) | `log₁₀(n)` |
+| Tamanho (n) | Inserção (s) | Busca (s) | Remoção (s) | `log(n)` |
 | :--- | :--- | :--- | :--- | :--- |
 | 10.000 | 0.10 | 0.07 | 0.08 | 4 |
 | 100.000 | 1.20 | 0.85 | 1.00 | 5 |
