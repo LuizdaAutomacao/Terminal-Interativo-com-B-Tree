@@ -24,4 +24,3 @@ Este projeto simula comandos básicos de um terminal Unix/Linux utilizando uma e
 ```bash
 pip install matplotlib
 
----
