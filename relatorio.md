@@ -42,6 +42,7 @@ Os dados foram plotados em um gráfico (`Grafico.png`) usando `matplotlib`.
 
 ![Benchmark da Árvore B+](Grafico.png)
 
+obs: A busca e remoção mostram 100% pois para se notar diferença graficamente as operações foram feitas em todos os elementos.
 ### Tempos medidos:
 
 | Tamanho n | Inserção (s) | Busca (s) | Remoção (s) | log₁₀(n) |
