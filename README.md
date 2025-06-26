@@ -23,3 +23,15 @@ Este projeto simula comandos básicos de um terminal Unix/Linux utilizando uma e
 
 ```bash
 pip install matplotlib
+
+---
+
+## Execute o terminal com
+
+```bash
+python terminal.py
+
+---
+##Execute o bechmark com
+```bash
+python benchmark.py
