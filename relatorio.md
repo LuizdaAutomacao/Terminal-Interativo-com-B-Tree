@@ -1,25 +1,33 @@
-# Relatório – Avaliação Experimental
+# Relatório – Avaliação Experimental (Versão Completa)
 
 Este projeto implementa uma árvore B+ do zero para simular um sistema de arquivos com comandos de terminal Unix-like.
 
-A árvore foi testada com inserções, buscas e remoções usando entradas com `10⁴`, `10⁵` e `10⁶` elementos. Os testes foram automatizados via o script `benchmark.py`.
+## 📊 Avaliação Experimental
 
-A figura abaixo apresenta os tempos médios medidos para cada operação:
+A árvore foi testada com inserções, buscas e remoções usando entradas com `10⁴`, `10⁵` e `10⁶` elementos. Os testes foram automatizados via o script `benchmark_bplustree_full.py`.
 
-![benchmark](Figure_1.png)
+Todas as operações foram executadas sobre **100% dos elementos inseridos**, o que representa um cenário mais realista e completo de uso da estrutura de dados.
 
-## Resultados esperados vs observados
+O gráfico gerado (`Grafico.png`) representa o tempo total de execução de cada operação:
 
-A árvore B+ tem complexidade teórica:
+- Inserção de todos os elementos
+- Busca de todos os elementos
+- Remoção de todos os elementos
+
+## 🧠 Complexidade Esperada
+
+A árvore B+ possui desempenho teórico:
+
 - Inserção: O(log n)
 - Busca: O(log n)
 - Remoção: O(log n)
 
-Como o gráfico mostra, os tempos observados cresceram de forma suave e compatível com a curva logarítmica. Isso confirma que a implementação atende ao desempenho esperado.
+Como a quantidade de operações cresceu linearmente com o número de elementos, o gráfico resultante também cresce suavemente. O tempo por operação continua se mantendo dentro da faixa logarítmica esperada, validando a eficiência da implementação.
 
-## Considerações
+## ✅ Conformidade com o Projeto
 
-- A árvore suporta diretórios com instâncias independentes da B+ Tree.
-- Nós folha são duplamente encadeados, como exigido.
-- O código é modular, separado por arquivos.
-- Os comandos do terminal refletem fielmente a hierarquia de arquivos.
+- A árvore suporta múltiplas instâncias para diretórios.
+- Nós folha são duplamente encadeados.
+- Todas as operações foram testadas com volume total.
+- O código está modularizado e pronto para execução.
+
