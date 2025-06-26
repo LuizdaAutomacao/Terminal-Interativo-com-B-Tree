@@ -1,59 +1,54 @@
-# 📊 Análise Empírica de Desempenho - Árvore B+
-
-## Objetivo
-
-O objetivo desta análise é avaliar empiricamente o desempenho da implementação da Árvore B+ com operações de:
-
-- Inserção
-- Busca
-- Remoção
-
-A análise compara o tempo médio de execução dessas operações com suas complexidades assintóticas esperadas, que são:
-
-| Operação   | Complexidade Teórica |
-|------------|----------------------|
-| Inserção   | O(logₙ)              |
-| Busca      | O(logₙ)              |
-| Remoção    | O(logₙ)              |
+# 📊 Análise Empírica e Estrutural do Sistema Fakerational com Árvore B+
 
 ---
 
-## Metodologia
+## 1. Objetivo
 
-O script `benchmark.py` foi usado para executar testes automatizados com entradas de tamanhos variados:
+O objetivo desta análise é avaliar o desempenho e o funcionamento estrutural da **Árvore B+** usada no sistema de arquivos `fakerational`.
+
+Serão abordados:
+
+- A complexidade teórica e empírica das operações (inserção, busca e remoção);
+- A estrutura hierárquica formada por árvores B+ nos diretórios;
+- O funcionamento do terminal e os comandos que impactam essa estrutura.
+
+---
+
+## 2. Metodologia Experimental
+
+O script `benchmark.py` foi utilizado para medir os tempos totais (em segundos) de três operações:
+
+- Inserção de `n` elementos aleatórios;
+- Busca por todos os elementos inseridos;
+- Remoção completa dos elementos.
+
+Os testes foram realizados para:
 
 - **n = 10.000**
 - **n = 100.000**
 - **n = 1.000.000**
 
-Para cada tamanho `n`, foram medidos os tempos totais (em segundos) para:
-
-1. Inserir `n` chaves aleatórias (strings).
-2. Buscar as `n` chaves inseridas.
-3. Remover as `n` chaves.
-
-Os dados foram plotados em um gráfico (`Grafico.png`) usando `matplotlib`.
+Os dados foram visualizados no gráfico `Grafico.png`.
 
 ---
----
 
-## 🌲 Estrutura Hierárquica das Árvores B+
+## 3. Estrutura Hierárquica das Árvores B+
 
-### Representação Visual
+### 3.1 Conceito
 
-O sistema fakerational organiza os arquivos e diretórios em uma **estrutura de árvores B+ aninhadas**, onde:
+O sistema fakerational organiza seus dados como **uma hierarquia de árvores B+ aninhadas**:
 
-- Cada diretório é representado como um **nó interno** contendo uma nova instância da árvore B+.
-- Arquivos são elementos terminais (folhas).
-- A ordenação é **lexicográfica** e mantida automaticamente pela árvore.
+- Cada diretório possui sua própria instância de B+ Tree.
+- Arquivos são armazenados nas folhas.
+- Os nós internos representam diretórios, contendo ponteiros para subárvores.
 
-Abaixo está um exemplo visual de como o sistema constrói esse conjunto de árvores:
+### 3.2 Exemplo Visual
 
-![Estrutura de Árvores B+](Esquemavisual.png)
+Abaixo, um exemplo visual da estrutura gerada:
 
-### Comandos que geram essa estrutura
+![Estrutura de Árvores B+](Esquema_visual.png)
 
-Os seguintes comandos do terminal produzem exatamente a hierarquia da imagem:
+### 3.3 Comandos utilizados para gerar a estrutura:
 
 ```bash
 fakerational:~$ mkdir projetos
@@ -65,44 +60,3 @@ fakerational:~/projetos/relatorios$ touch abril.pdf
 fakerational:~/projetos/relatorios$ touch maio.pdf
 fakerational:~/projetos/testes$ touch unit.py
 fakerational:~/projetos/testes$ touch integracao.py
-
-
-## Resultados
-
-### Gráfico de desempenho
-
-![Benchmark da Árvore B+](Grafico.png)
-
-obs: A busca e remoção mostram 100% pois para se notar diferença graficamente as operações foram feitas em todos os elementos.
-### Tempos medidos:
-
-| Tamanho n | Inserção (s) | Busca (s) | Remoção (s) | log₁₀(n) |
-|-----------|--------------|-----------|-------------|----------|
-| 10.000    | 0.10         | 0.07      | 0.08        | 4        |
-| 100.000   | 1.20         | 0.85      | 1.00        | 5        |
-| 1.000.000 | 13.00        | 6.20      | 7.80        | 6        |
-
----
-
-## Análise Comparativa
-
-A análise visual e numérica mostra que:
-
-- O crescimento dos tempos **segue uma tendência logarítmica**, conforme esperado teoricamente.
-- A **inserção** é a operação mais custosa, pois envolve splits e propagação de chaves.
-- A **busca** é eficiente e mais barata que as demais, mesmo com 1 milhão de elementos.
-- A **remoção** é intermediária, impactada por possíveis fusões e rebalanceamentos.
-
-A proporcionalidade com `log(n)` mostra que a estrutura mantém um excelente desempenho, mesmo para volumes elevados de dados.
-
----
-
-## Conclusão
-
-A implementação da Árvore B+ apresentou desempenho coerente com o esperado:
-
-- Todas as operações escalaram com **crescimento logarítmico**.
-- A estrutura manteve **eficiência e estabilidade** mesmo com grandes volumes de dados.
-- A estratégia de **encadeamento duplo nos nós folha** contribuiu para um acesso eficiente e ordenado dos dados.
-- O sistema está pronto para uso em aplicações que exijam armazenamento hierárquico com alto desempenho.
-
