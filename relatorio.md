@@ -1,54 +1,60 @@
-# 📊 Análise Empírica e Estrutural do Sistema Fakerational com Árvore B+
+# 📊 Análise Empírica de Desempenho - Árvore B+
 
 ---
 
-## 1. Objetivo
+## 🎯 Objetivo
 
-O objetivo desta análise é avaliar o desempenho e o funcionamento estrutural da **Árvore B+** usada no sistema de arquivos `fakerational`.
+O objetivo desta análise é avaliar empiricamente o desempenho da implementação da **Árvore B+** com operações de:
 
-Serão abordados:
+- Inserção
+- Busca
+- Remoção
 
-- A complexidade teórica e empírica das operações (inserção, busca e remoção);
-- A estrutura hierárquica formada por árvores B+ nos diretórios;
-- O funcionamento do terminal e os comandos que impactam essa estrutura.
+A análise compara o tempo médio de execução dessas operações com suas complexidades assintóticas esperadas, que são:
+
+| Operação   | Complexidade Teórica |
+|------------|----------------------|
+| Inserção   | O(logₙ)              |
+| Busca      | O(logₙ)              |
+| Remoção    | O(logₙ)              |
 
 ---
 
-## 2. Metodologia Experimental
+## 🧪 Metodologia
 
-O script `benchmark.py` foi utilizado para medir os tempos totais (em segundos) de três operações:
-
-- Inserção de `n` elementos aleatórios;
-- Busca por todos os elementos inseridos;
-- Remoção completa dos elementos.
-
-Os testes foram realizados para:
+O script `benchmark.py` foi usado para executar testes automatizados com entradas de tamanhos variados:
 
 - **n = 10.000**
 - **n = 100.000**
 - **n = 1.000.000**
 
-Os dados foram visualizados no gráfico `Grafico.png`.
+Para cada tamanho `n`, foram medidos os tempos totais (em segundos) para:
+
+1. Inserir `n` chaves aleatórias (strings).
+2. Buscar as `n` chaves inseridas.
+3. Remover as `n` chaves.
+
+Os dados foram plotados em um gráfico (`Grafico.png`) usando `matplotlib`.
 
 ---
 
-## 3. Estrutura Hierárquica das Árvores B+
+## 🌲 Estrutura Hierárquica das Árvores B+
 
-### 3.1 Conceito
+### 🗂️ Representação Visual
 
-O sistema fakerational organiza seus dados como **uma hierarquia de árvores B+ aninhadas**:
+O sistema fakerational organiza os arquivos e diretórios em uma **estrutura de árvores B+ aninhadas**, onde:
 
-- Cada diretório possui sua própria instância de B+ Tree.
-- Arquivos são armazenados nas folhas.
-- Os nós internos representam diretórios, contendo ponteiros para subárvores.
+- Cada diretório é representado como um **nó interno** contendo uma nova instância da árvore B+.
+- Arquivos são elementos terminais (folhas).
+- A ordenação é **lexicográfica** e mantida automaticamente pela árvore.
 
-### 3.2 Exemplo Visual
-
-Abaixo, um exemplo visual da estrutura gerada:
+Abaixo está um exemplo visual de como o sistema constrói esse conjunto de árvores:
 
 ![Estrutura de Árvores B+](Esquema_visual.png)
 
-### 3.3 Comandos utilizados para gerar a estrutura:
+### 💻 Comandos que geram essa estrutura
+
+Os seguintes comandos do terminal produzem exatamente a hierarquia da imagem acima:
 
 ```bash
 fakerational:~$ mkdir projetos
@@ -56,7 +62,12 @@ fakerational:~$ cd projetos
 fakerational:~/projetos$ touch plano.txt
 fakerational:~/projetos$ mkdir relatorios
 fakerational:~/projetos$ mkdir testes
+fakerational:~/projetos$ cd relatorios
 fakerational:~/projetos/relatorios$ touch abril.pdf
 fakerational:~/projetos/relatorios$ touch maio.pdf
+fakerational:~/projetos/relatorios$ cd ..
+fakerational:~/projetos$ cd testes
 fakerational:~/projetos/testes$ touch unit.py
 fakerational:~/projetos/testes$ touch integracao.py
+
+
