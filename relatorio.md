@@ -2,11 +2,11 @@
 
 Este projeto implementa uma árvore B+ do zero para simular um sistema de arquivos com comandos de terminal Unix-like.
 
-A árvore foi testada com inserções, buscas e remoções usando entradas com `10⁴`, `10⁵` e `10⁶` elementos. Os testes foram automatizados via o script `benchmark_bplustree.py`.
+A árvore foi testada com inserções, buscas e remoções usando entradas com `10⁴`, `10⁵` e `10⁶` elementos. Os testes foram automatizados via o script `benchmark.py`.
 
 A figura abaixo apresenta os tempos médios medidos para cada operação:
 
-![benchmark](benchmark_bplustree.png)
+![benchmark](Figure_1.png)
 
 ## Resultados esperados vs observados
 
