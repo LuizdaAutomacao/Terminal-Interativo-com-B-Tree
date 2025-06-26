@@ -16,7 +16,7 @@ Este projeto simula comandos básicos de um terminal Unix/Linux utilizando uma e
 
 ---
 
-## Como Executar
+## Para Executar
 
 1. Certifique-se de ter **Python 3.6 ou superior** instalado.
 2. Instale as dependências (somente para o benchmark):
