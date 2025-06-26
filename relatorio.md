@@ -35,6 +35,37 @@ Para cada tamanho `n`, foram medidos os tempos totais (em segundos) para:
 Os dados foram plotados em um gráfico (`Grafico.png`) usando `matplotlib`.
 
 ---
+---
+
+## 🌲 Estrutura Hierárquica das Árvores B+
+
+### Representação Visual
+
+O sistema fakerational organiza os arquivos e diretórios em uma **estrutura de árvores B+ aninhadas**, onde:
+
+- Cada diretório é representado como um **nó interno** contendo uma nova instância da árvore B+.
+- Arquivos são elementos terminais (folhas).
+- A ordenação é **lexicográfica** e mantida automaticamente pela árvore.
+
+Abaixo está um exemplo visual de como o sistema constrói esse conjunto de árvores:
+
+![Estrutura de Árvores B+](Esquemavisual.png)
+
+### Comandos que geram essa estrutura
+
+Os seguintes comandos do terminal produzem exatamente a hierarquia da imagem:
+
+```bash
+fakerational:~$ mkdir projetos
+fakerational:~$ cd projetos
+fakerational:~/projetos$ touch plano.txt
+fakerational:~/projetos$ mkdir relatorios
+fakerational:~/projetos$ mkdir testes
+fakerational:~/projetos/relatorios$ touch abril.pdf
+fakerational:~/projetos/relatorios$ touch maio.pdf
+fakerational:~/projetos/testes$ touch unit.py
+fakerational:~/projetos/testes$ touch integracao.py
+
 
 ## Resultados
 
