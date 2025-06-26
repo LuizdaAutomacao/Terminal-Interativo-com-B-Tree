@@ -12,7 +12,7 @@ Este projeto simula comandos básicos de um terminal Unix/Linux utilizando uma e
 - `cd <nome>`: entra no diretório
 - `cd ..`: volta ao diretório pai
 - `rm <nome>`: remove arquivo ou diretório vazio
-- `exit`: encerra o terminal
+- `exit`: encerra o terminal (não pedido no trabalho mas implementado)
 
 ---
 
